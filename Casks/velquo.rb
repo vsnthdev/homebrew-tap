@@ -18,14 +18,18 @@ cask "velquo" do
 
   app "Velquo.app"
 
-  zap trash: [
-    "~/Library/Application Support/dev.vsnth.velquo",
-    "~/Library/Caches/dev.vsnth.velquo",
-    "~/Library/Logs/Velquo",
-    "~/Library/Preferences/dev.vsnth.velquo.plist",
-    "~/Library/Saved Application State/dev.vsnth.velquo.savedState",
-    "~/Library/WebKit/dev.vsnth.velquo",
-  ]
+  uninstall quit: "dev.vsnth.velquo"
+
+  zap launchctl: "Velquo",
+      trash:     [
+        "~/Library/Application Support/dev.vsnth.velquo",
+        "~/Library/Caches/dev.vsnth.velquo",
+        "~/Library/LaunchAgents/Velquo.plist",
+        "~/Library/Logs/Velquo",
+        "~/Library/Preferences/dev.vsnth.velquo.plist",
+        "~/Library/Saved Application State/dev.vsnth.velquo.savedState",
+        "~/Library/WebKit/dev.vsnth.velquo",
+      ]
 
   caveats <<~EOS
     If Velquo is blocked by macOS Gatekeeper on first launch, run:
