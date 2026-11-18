@@ -18,6 +18,15 @@ cask "velquo" do
 
   app "Velquo.app"
 
+  postflight_steps do
+    mkdir_p "Library/Application Support/dev.vsnth.velquo", base: :home
+    touch "Library/Application Support/dev.vsnth.velquo/HomebrewInstall", base: :home
+  end
+
+  uninstall_postflight_steps do
+    remove "Library/Application Support/dev.vsnth.velquo/HomebrewInstall", base: :home
+  end
+
   uninstall quit: "dev.vsnth.velquo"
 
   zap launchctl: "Velquo",
