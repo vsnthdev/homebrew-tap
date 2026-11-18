@@ -1,6 +1,6 @@
 cask "velquo" do
-  version "1.3.1"
-  sha256 "4fc1de9203ec52adeed98a70fa25fd4c41f39a740d148fc70883c7ff1cdfa30d"
+  version "1.4.0"
+  sha256 "8b7fdf8b408742ca5aa7765a31f5085952eceb20a5e2d31a0262ba3f15187973"
 
   url "https://github.com/vsnthdev/Velquo/releases/download/v#{version}/Velquo_#{version}_aarch64.dmg"
   name "Velquo"
